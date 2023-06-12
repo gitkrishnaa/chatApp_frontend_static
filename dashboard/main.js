@@ -8,10 +8,13 @@ const user_email=localStorage.getItem("user_email")
 if(!jwt){
   const respose=  confirm("user logout since jwtKey not in loaclstorage ,would you like to login or signup")
   if(respose){window.location="../index.html"}
-  return;
+//   return;
 }
 else{
+    //user info show on dashboard
     alert(`welcome to chatApp ${user_name}`)
+    const display_user_name=document.getElementById("display_user_name");
+    display_user_name.innerText=user_name
 }
 
 const logout_button=document.getElementById("logout_button");
