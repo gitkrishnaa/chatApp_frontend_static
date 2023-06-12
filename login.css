@@ -1,0 +1,70 @@
+
+.login_signup-div{
+/* background-color: beige; */
+transition: .4s;
+
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.login_signup-div>div{
+    transition: .4s;
+
+    padding: 50px;
+width: 70%;
+/* height: 70%; */
+background-color: rgb(251, 251, 252);
+max-width: 400px;
+max-height: 500px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border-radius: 20px;
+/* border: none; */
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.input_div{
+/* background-color: aqua; */
+width: 100%;
+/* height: 100%; */
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.input_div>input{
+    display: block;
+    /* background-color: aqua; */
+    width: 90%;
+    height: 40px;
+    /* height: 100%; */
+    margin: 5px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid rgb(87, 86, 86);
+    }
+    .button1{
+        display: block;
+    /* background-color: aqua; */
+    width: 70%;
+    height: 40px;
+    /* height: 100%; */
+    margin: 20px;
+    text-align: center;
+    font-size: 25px;
+    background-color: aqua;
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+.button1:hover{
+background-color: rgb(230, 0, 255);
+transition: .4s;
+
+    }
