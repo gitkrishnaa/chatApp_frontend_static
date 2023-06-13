@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="groupCreating_form.css">
+
   </head>
-  <body>
+  <body id="body">
 
 
-<div><span>message</span></div>
-<div><span>email</span></div>
+
 
     <div>
         <div>ChatApp</div>
@@ -26,8 +27,26 @@
          <span> hello </span><span id="display_user_name"> user</span>
         </div>
     </div>
+
+
+<!-- create group button -->
+<button id="Create-New-Group">Create New Group</button>
+
     <div>
       <div class="outer_div">
+        <div id="group-list-main-div">
+          <div id="group-list-div">
+          <div>abc</div>
+<div>abc</div>
+<div>abc</div>
+<div>abc</div>
+<div>abc</div>
+           <div>abc</div> 
+
+
+          </div>
+
+        </div>
         <div class="div_chat_main">
           <div class="display_chat_div" id="display_chat_div"></div>
           <div class="chat_input_div">
@@ -37,9 +56,29 @@
         </div>
       </div>
     </div>
+
+
+    <!-- template for group creating form -->
+<div>
+<div>
+<div>Name</div><div><input type="text" placeholder="Group name"></div>
+<div>select members</div><div></div>
+<div>your selected members</div><div></div>
+
+
+
+<button id="group_creating_btn"> submit</button>
+
+</div>
+</div>
+
+
   </body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+  
   <script src="main.js"></script>
+  <script src="  groupCreating_form.js"></script>
+  <!-- <script src="main.js"></script> -->
+
 
 </html>
