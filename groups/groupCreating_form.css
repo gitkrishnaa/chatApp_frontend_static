@@ -17,7 +17,7 @@ justify-content:center;
 }
 #select_member{
     
-width:49%;
+width:100%;
 height:100%;
 background-color:blue;
 margin:1%;
@@ -27,7 +27,6 @@ align-items:center;
 /* justify-content:center; */
 }
 #selected_member{
-    
 width:49%;
 height:100%;
 margin:1%;
