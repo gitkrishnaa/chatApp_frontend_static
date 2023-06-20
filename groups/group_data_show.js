@@ -73,18 +73,18 @@ const group_id_from_localstorage=localStorage.getItem("group_id")
 console.log("final data id=",group_message_save_data)
 
 
-        // const resp = await axios.post(
-        //   "http://localhost:4000/chat/chatSave",
-        //   {
-        //     message: message.value,
-        //   },
-        //   {
-        //     headers: {
-        //       Authorization: jwtKey,
-        //     },
-        //   }
-        // );
-        // console.log(resp);
+        const resp = await axios.post(
+          "http://localhost:4000/group/save_group_chat",
+          {
+            data:group_message_save_data
+          },
+          {
+            headers: {
+              Authorization: jwtKey,
+            },
+          }
+        );
+        console.log(resp);
 
         //display chat send by user in div
         const display_chat = document.getElementById("display_chat_div");
