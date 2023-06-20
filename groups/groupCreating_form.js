@@ -82,20 +82,28 @@ create_group_button.addEventListener("click", async () => {
   const data_array = resp.data.data;
   let x = 0;
   //creating user_group in object
+  const super_admin_user_email= localStorage.getItem("user_email");
   const user_group_object = {};
   const inpu_value = document.getElementById("input_group_name");
-  user_group_object.super_Admin = localStorage.getItem("user_email");
+  user_group_object.super_Admin =super_admin_user_email
   user_group_object.name = inpu_value.value;
   user_group_object.members = {};
   const members = user_group_object.members;
 
   data_array.map((data) => {
+//hinding the user who creating the group from adding member list
+if(super_admin_user_email==data.email){
+  // alert("same user exist also in the list");
+  
+return;
+}
+
     const outer_div = document.createElement("div");
 
     const text = document.createElement("span");
     const add_button = document.createElement("button");
 
-    text.innerText = "" + data.mobile;
+    text.innerText = "" +data.name+" "+data.email+" "+ data.mobile;
     add_button.innerText = "add";
 
     outer_div.appendChild(text);
@@ -149,11 +157,38 @@ create_group_button.addEventListener("click", async () => {
   const save = document.createElement("button");
   new_outer_div.appendChild(save);
   save.innerText = "save";
-  save.addEventListener("click",()=>{
-    const group_name=document.getElementById("input_group_name")
-    user_group_object.name=group_name.value
-    console.log(user_group_object)
-  })
+  save.addEventListener("click", async () => {
+    const group_name = document.getElementById("input_group_name");
+    user_group_object.name = group_name.value;
+    console.log(user_group_object);
+
+
+//alert if not any memeber is selected in creating group
+if(Object.keys(user_group_object).length==0){
+  alert("group object is empty")
+}
+else if(user_group_object.name==""){
+  alert("group name is empty")
+}
+else if(Object.keys(user_group_object.members).length==0){
+  alert("member is not added so please add atleast two or more member")
+}
+
+    const resp = await axios.post(
+      "http://localhost:4000/group/group_create",
+      { 
+        group_data: user_group_object,
+      },
+      {
+        headers: {
+          Authorization: jwtKey,
+        },
+      }
+    );
+console.log(Object.keys(user_group_object.members),"group object keys")
+    console.log(resp)
+    alert(resp.data.message)
+  });
 
   //////////////creating selected member part \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
