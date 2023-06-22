@@ -159,6 +159,9 @@ return;
   save.innerText = "save";
   save.addEventListener("click", async () => {
     const group_name = document.getElementById("input_group_name");
+
+
+
     user_group_object.name = group_name.value;
     console.log(user_group_object);
 
@@ -166,12 +169,16 @@ return;
 //alert if not any memeber is selected in creating group
 if(Object.keys(user_group_object).length==0){
   alert("group object is empty")
+
+  return;
 }
 else if(user_group_object.name==""){
-  alert("group name is empty")
+  alert("group name is empty");
+  return;
 }
 else if(Object.keys(user_group_object.members).length==0){
-  alert("member is not added so please add atleast two or more member")
+  alert("member is not added so please add atleast two or more member");
+  return;
 }
 
     const resp = await axios.post(
